@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CSD_Randomizer));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
+            this.generateButton = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.teamCountTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.personTextBox = new System.Windows.Forms.TextBox();
+            this.teamTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button3
+            // generateButton
             // 
-            this.button3.Location = new System.Drawing.Point(563, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Сгенерировать";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.generateButton.Location = new System.Drawing.Point(563, 9);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(96, 23);
+            this.generateButton.TabIndex = 7;
+            this.generateButton.Text = "Сгенерировать";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.GenerateButtonClick);
             // 
             // label3
             // 
@@ -64,13 +64,13 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Количество команд";
             // 
-            // textBox3
+            // teamCountTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(137, 2);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 20);
-            this.textBox3.TabIndex = 9;
+            this.teamCountTextBox.Location = new System.Drawing.Point(137, 2);
+            this.teamCountTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.teamCountTextBox.Name = "teamCountTextBox";
+            this.teamCountTextBox.Size = new System.Drawing.Size(76, 20);
+            this.teamCountTextBox.TabIndex = 9;
             // 
             // label1
             // 
@@ -90,36 +90,36 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Output";
             // 
-            // textBox1
+            // personTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 53);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(313, 335);
-            this.textBox1.TabIndex = 13;
+            this.personTextBox.Location = new System.Drawing.Point(15, 53);
+            this.personTextBox.Multiline = true;
+            this.personTextBox.Name = "personTextBox";
+            this.personTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.personTextBox.Size = new System.Drawing.Size(313, 335);
+            this.personTextBox.TabIndex = 13;
             // 
-            // textBox2
+            // teamTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(334, 52);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(325, 336);
-            this.textBox2.TabIndex = 14;
+            this.teamTextBox.Location = new System.Drawing.Point(334, 52);
+            this.teamTextBox.Multiline = true;
+            this.teamTextBox.Name = "teamTextBox";
+            this.teamTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.teamTextBox.Size = new System.Drawing.Size(325, 336);
+            this.teamTextBox.TabIndex = 14;
             // 
             // CSD_Randomizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 400);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.teamTextBox);
+            this.Controls.Add(this.personTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.teamCountTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.generateButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CSD_Randomizer";
             this.Text = "HITS_Randomizer";
@@ -131,14 +131,14 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox teamCountTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox personTextBox;
+        private System.Windows.Forms.TextBox teamTextBox;
     }
 }
 

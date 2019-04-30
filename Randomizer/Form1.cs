@@ -18,16 +18,16 @@ namespace Randomizer
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void GenerateButtonClick(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            if (textBox1.Text.Length == 0 || textBox3.Text.Length == 0)
+            teamTextBox.Text = "";
+            if (personTextBox.Text.Length == 0 || teamCountTextBox.Text.Length == 0)
             {
                 return;
             }
             List<string[]> input = new List<string[]>();
 
-            foreach (var item in textBox1.Text.Split('\n'))
+            foreach (var item in personTextBox.Text.Split('\n'))
             {
                 string a = item;
                 if (a.IndexOf('\r') != -1)
@@ -42,8 +42,9 @@ namespace Randomizer
             }
 
             int studentCount = input.Count;
-            input.Sort((x, y) => Convert.ToDouble(x[x.Length - 1]).CompareTo(Convert.ToDouble(y[y.Length - 1])));
-            int teamsCount = Convert.ToInt32(textBox3.Text);
+            input.Sort((x, y) => Convert.ToDouble(x.Last()).CompareTo(Convert.ToDouble(y.Last())));
+            int teamsCount;
+            Int32.TryParse(teamCountTextBox.Text, out teamsCount);
             Random rand = new Random();
             List<List<string[]>> teams = new List<List<string[]>>();
             for (int i = 0; i < teamsCount; i++)
@@ -69,16 +70,16 @@ namespace Randomizer
 
             for (int i = 0; i < teams.Count; i++)
             {
-                textBox2.Text += "Team " + i.ToString() + "\r\n";
+                teamTextBox.Text += $"Team {i} ({teams[i].Sum(x => Convert.ToDouble(x.Last())).ToString()})\r\n";
                 for (int j = 0; j < teams[i].Count; j++)
                 {
                     for (int z = 0; z < teams[i][j].Length - 1; z++)
                     {
-                        textBox2.Text += teams[i][j][z] + " ";
+                        teamTextBox.Text += $"{teams[i][j][z]}  ";
                     }
-                    textBox2.Text += "\r\n";
+                    teamTextBox.Text += "\r\n";
                 }
-                textBox2.Text += "\r\n";
+                teamTextBox.Text += "\r\n";
             }
         }
 
